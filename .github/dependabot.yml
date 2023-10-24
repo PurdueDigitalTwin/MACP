@@ -1,0 +1,19 @@
+# Configuration for Dependabot version updates
+# Please see the documentation for all the options:
+# https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: /
+    schedule:
+      interval: "weekly"
+      timezone: "America/Fort_Wayne"
+    ignore:
+      - dependency-name: "mmcv"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "mmdet"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "mmdet3d"
+        update-types: ["version-update:semver-minor"]
+      - dependency-name: "mmengine"
+        update-types: ["version-update:semver-minor"]
