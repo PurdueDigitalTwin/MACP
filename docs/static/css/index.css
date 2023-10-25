@@ -1,5 +1,6 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  /* font-family: 'Noto Sans', sans-serif; */
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 
@@ -132,6 +133,3 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
-
-
-
