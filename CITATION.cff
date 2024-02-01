@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - name: "MMDetection3D Contributors"
-title: "OpenMMLab's Next-generation Platform for General 3D Object Detection"
-date-released: 2020-07-23
-url: "https://github.com/open-mmlab/mmdetection3d"
-license: Apache-2.0
+  - name: "Ma, Yunsheng and Lu, Juanwu and Cui, Can and Zhao, Sicheng and Cao, Xu and Ye, Wenqian and Wang, Ziran"
+title: "MACP: Efficient Model Adaptation for Cooperative Perception"
+date-released: 2024-02-01
+url: "https://github.com/PurdueDigitalTwin/MACP"
+license: MIT

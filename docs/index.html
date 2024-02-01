@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <!-- <meta name="description" content="DESCRIPTION META TAG"> -->
+  <!-- <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" /> -->
+  <!-- <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" /> -->
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/image/icon.jpeg" /> -->
+  <!-- <meta property="og:image:width" content="1200" /> -->
+  <!-- <meta property="og:image:height" content="630" /> -->
+
+
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG"> -->
+  <!-- <meta name="twitter:description" -->
+  <!-- content="TWITTER BANNER DESCRIPTION META TAG"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" -->
+  <!-- content="static/images/your_twitter_banner_image.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+  <title>MACP: Efficient Model Adaptation for Cooperative Perception</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.jpeg">
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<!-- Custom styles -->
+<style type="text/css">
+  .tg {
+    border-collapse: collapse;
+    border-color: #ccc;
+    border-spacing: 0;
+    width: 90%
+  }
+
+  .tg td {
+    background-color: #fff;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+
+  .tg th {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+  }
+
+  .tg .tg-73vb {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top
+  }
+
+  .tg .tg-baqh {
+    text-align: center;
+    vertical-align: top
+  }
+
+  .tg .tg-amwm {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top
+  }
+</style>
+<!-- End custom styles -->
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MACP: Efficient Model
+              Adaptation for Cooperative Perception</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://maysonma.github.io/" target="_blank">Yunsheng
+                  Ma</a><sup>1</sup><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/juanwu-lu-35a9951b8" ,
+                  target="_blank">Juanwu Lu</a><sup>1</sup><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cancui19.github.io/" target="_blank">Can
+                  Cui</a><sup>1</sup>,
+              </span><br>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/schzhao"
+                  target="_blank">Sicheng Zhao</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.irohxucao.com/" target="_blank">Xu
+                  Cao</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://wenqian-ye.github.io/" target="_blank">Wenqian
+                  Ye</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ziranw.github.io/" target="_blank">Ziran
+                  Wang</a><sup>1</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1 </sup> Purdue University,
+                <sup>2 </sup> Tsinghua University,<br>
+                <sup>3 </sup> University of Illinois Urbana-Champaign,
+                <sup>4 </sup> University of Virginia
+              </span>
+              <br>
+              <span>IEEE/CVF Winter Conference on Applications of Computer
+                Vision (WACV) 2024</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal
+                  Contribution</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf"
+                    target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf"
+                    target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/PurdueDigitalTwin/MACP"
+                    target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2310.16870"
+                    target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+  <!-- Your video here -->
+  <!-- <source src="static/videos/banner_video.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus
+          tellus, maximus vel lectus at, placerat pretium mi. Maecenas
+          dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut
+          maximus.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <img src="static/images/coperation.png" , alt="v2v_conada" />
+          <figcaption>Overview of the MACP Framework</figcaption><br>
+          <div class="content has-text-justified">
+            <p>
+              Vehicle-to-vehicle (V2V) communications have greatly enhanced the
+              perception capabilities of connected and automated vehicles
+              (CAVs) by enabling information sharing to "see through the
+              occlusions", resulting in significant performance improvements.
+              However, developing and training complex multi-agent perception
+              models from scratch can be expensive and unnecessary when
+              existing single-agent models show remarkable generalization
+              capabilities. In this paper, we propose a new framework termed
+              MACP, which equips a single-agent pre-trained model with
+              cooperation capabilities. We approach this objective by
+              identifying the key challenges of shifting from single-agent to
+              cooperative settings, adapting the model by freezing most of its
+              parameters, and adding a few lightweight modules. We demonstrate
+              in our experiments that the proposed framework can effectively
+              utilize cooperative observations and outperform other
+              state-of-the-art approaches in both simulated and real-world
+              cooperative perception benchmarks, while requiring substantially
+              fewer tunable parameters with reduced communication costs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!-- Performance results -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Performance Results</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="carousel-item has-background is-active">
+            <h2 class="subtitle has-text-centered"><b>Performance Comparison on
+                the V2V4Real Dataset</b></h2>
+            <div class="tabel-container">
+              <table class="tg"
+                style="border:1px solid black; margin-left:auto;margin-right:auto;">
+
+                </caption>
+                <thead>
+                  <tr>
+                    <th class="tg-amwm" rowspan="2">Method</th>
+                    <th class="tg-amwm" colspan="2">Param (M)</th>
+                    <th class="tg-amwm" colspan="4">AP@IoU=50/70 (<span
+                        style="font-weight:400">↑</span>)</th>
+                    <th class="tg-amwm" rowspan="2">AM (↓)<br>(MB)</th>
+                  </tr>
+                  <tr>
+                    <th class="tg-73vb">Total</th>
+                    <th class="tg-73vb">Trainable</th>
+                    <th class="tg-73vb">Overall</th>
+                    <th class="tg-73vb">0-30m</th>
+                    <th class="tg-73vb">30-50m</th>
+                    <th class="tg-73vb">50-100m</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-baqh">No Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">39.8/22.0</td>
+                    <td class="tg-baqh">69.2/42.6</td>
+                    <td class="tg-baqh">29.3/14.4</td>
+                    <td class="tg-baqh">4.8/1.6</td>
+                    <td class="tg-baqh">0</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">Late Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">55.0/26.7</td>
+                    <td class="tg-baqh">73.5/36.8</td>
+                    <td class="tg-baqh">43.7/22.2</td>
+                    <td class="tg-baqh">36.2/17.3</td>
+                    <td class="tg-baqh">0.003</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">Early Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">59.7/32.1</td>
+                    <td class="tg-baqh">76.1/46.3</td>
+                    <td class="tg-baqh">42.5/20.8</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">47.6</span>/<span
+                        style="text-decoration:underline">21.1</span></td>
+                    <td class="tg-baqh">0.96</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">F-Cooper</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh">60.7/31.8</td>
+                    <td class="tg-baqh">80.8/46.9</td>
+                    <td class="tg-baqh">45.6/23.6</td>
+                    <td class="tg-baqh">32.8/13.4</td>
+                    <td class="tg-baqh">0.20</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">V2VNet</td>
+                    <td class="tg-baqh">14.61</td>
+                    <td class="tg-baqh">14.61</td>
+                    <td class="tg-baqh">64.5/34.3</td>
+                    <td class="tg-baqh">80.6/51.4</td>
+                    <td class="tg-baqh">52.6/26.6</td>
+                    <td class="tg-baqh">42.6/14.6</td>
+                    <td class="tg-baqh">0.20</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">AttFuse</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">64.7/33.6</td>
+                    <td class="tg-baqh">79.8/44.1</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">53.1</span>/<span
+                        style="text-decoration:underline">29.3</span></td>
+                    <td class="tg-baqh">43.6/19.3</td>
+                    <td class="tg-baqh">0.20</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">V2X-ViT</td>
+                    <td class="tg-baqh">13.45</td>
+                    <td class="tg-baqh">13.45</td>
+                    <td class="tg-baqh">64.9/<span
+                        style="text-decoration:underline">36.9</span></td>
+                    <td class="tg-baqh">82.0/<span
+                        style="text-decoration:underline">55.3</span></td>
+                    <td class="tg-baqh">51.7/26.6</td>
+                    <td class="tg-baqh">43.2/16.2</td>
+                    <td class="tg-baqh">0.20</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">CoBEVT</td>
+                    <td class="tg-baqh">10.51</td>
+                    <td class="tg-baqh">10.51</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">66.5</span>/36.0</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">82.3</span>/51.1</td>
+                    <td class="tg-baqh">52.1/28.2</td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">49.1</span>/19.5</td>
+                    <td class="tg-baqh">0.20</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-amwm">MACP (Ours)</td>
+                    <td class="tg-baqh">8.94</td>
+                    <td class="tg-baqh">1.97</td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">67.6</span>/<span
+                        style="font-weight:bold">47.9</span></td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">83.7</span>/<span
+                        style="font-weight:bold">62.1</span></td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">58.4</span>/<span
+                        style="font-weight:bold">38.5</span></td>
+                    <td class="tg-baqh">34.6/<span
+                        style="font-weight:bold">23.1</span></td>
+                    <td class="tg-baqh">0.13</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="carousel-item has-background">
+            <div class="tabel-container">
+              <h2 class="subtitle has-text-centered"><b>Performance compared to
+                  SOTA on the OPV2V</b></h2>
+              <table class="tg"
+                style="border:1px solid black; margin-left:auto;margin-right:auto;">
+
+                </caption>
+                <thead>
+                  <tr>
+                    <th class="tg-amwm" rowspan="2">Method</th>
+                    <th class="tg-amwm" colspan="2">Param (M)</th>
+                    <th class="tg-amwm" colspan="2">AP@IoU=50/70 (<span
+                        style="font-weight:400">↑</span>)</th>
+                  </tr>
+                  <tr>
+                    <th class="tg-73vb">Total</th>
+                    <th class="tg-73vb">Trainable</th>
+                    <th class="tg-73vb">Default Towns</th>
+                    <th class="tg-73vb">Culver City</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-baqh">No Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">67.9/60.2</td>
+                    <td class="tg-baqh">55.7/47.1</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">Late Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">85.8/79.1</td>
+                    <td class="tg-baqh">79.9/66.8</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">Early Fusion</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">89.1/80.0</td>
+                    <td class="tg-baqh">82.9/69.6</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">F-Cooper</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh">88.7/79.0</td>
+                    <td class="tg-baqh">84.6/72.8</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">V2VNet</td>
+                    <td class="tg-baqh">14.61</td>
+                    <td class="tg-baqh">14.61</td>
+                    <td class="tg-baqh">89.7/82.2</td>
+                    <td class="tg-baqh">86.0/73.4</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">AttFuse</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">6.58</td>
+                    <td class="tg-baqh">90.8/81.5</td>
+                    <td class="tg-baqh">85.4/73.5</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">V2X-ViT</td>
+                    <td class="tg-baqh">13.45</td>
+                    <td class="tg-baqh">13.45</td>
+                    <td class="tg-baqh">89.1/82.6</td>
+                    <td class="tg-baqh">87.3/73.7</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">CoBEVT</td>
+                    <td class="tg-baqh">10.51</td>
+                    <td class="tg-baqh">10.51</td>
+                    <td class="tg-baqh">91.4/<span
+                        style="text-decoration:underline">86.1</span></td>
+                    <td class="tg-baqh">85.9/77.2</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-baqh">AdaFusion</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh">7.27</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">91.6</span>/85.6</td>
+                    <td class="tg-baqh"><span
+                        style="text-decoration:underline">88.1</span>/<span
+                        style="text-decoration:underline">79.0</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-amwm">MACP (Ours)</td>
+                    <td class="tg-baqh">8.98</td>
+                    <td class="tg-baqh">2.00</td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">93.7</span>/<span
+                        style="font-weight:bold">90.3</span></td>
+                    <td class="tg-baqh"><span
+                        style="font-weight:bold">91.4</span>/<span
+                        style="font-weight:bold">80.7</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+            </div>
+          </div>
+        </div>
+
+  </section>
+  <!-- End performance results -->
+
+  <!-- Compression rate-->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Effective Cooperation</h2>
+        <div id="cooperation-carousel" class="carousel results-carousel">
+          <div class="item">
+            <h2 class="subtitle has-text-centered">
+              <b>Performance vs. Communication Data Compression Factor</b>
+            </h2>
+            <center>
+              <img src="static/images/compression_factor.png"
+                alt="compression-factor" style="width:60%">
+            </center>
+          </div>
+          <div class="item">
+            <h2 class="subtitle has-text-centered">
+              <b>Performance vs. Maximum Number of CAVs</b>
+            </h2>
+            <center>
+              <img src="static/images/max_num_cavs.png" alt="num-cav"
+                style="width:60%">
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End compression rate-->
+
+
+  <!-- Youtube video -->
+  <!-- <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container"> -->
+  <!-- Paper video. -->
+  <!-- <h2 class="title is-3">Video Presentation</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+
+            <div class="publication-video"> -->
+  <!-- Youtube embed code here -->
+  <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0"
+                frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End youtube video -->
+
+
+  <!-- Video carousel -->
+  <!-- <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-3">Another Carousel</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-video1">
+            <video poster="" id="video1" autoplay controls muted loop
+              height="100%"> -->
+  <!-- Your video file here -->
+  <!-- <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video2">
+            <video poster="" id="video2" autoplay controls muted loop
+              height="100%"> -->
+  <!-- Your video file here -->
+  <!-- <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-video3">
+            <video poster="" id="video3" autoplay controls muted loop
+              height="100%">\ -->
+  <!-- Your video file here -->
+  <!-- <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video carousel -->
+
+  <!-- Paper poster -->
+  <!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+  <!--End paper poster -->
+
+
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+  </section> -->
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="content">
+          <p>
+            Copyright &#169; 2023 Purdue Digital Twin Lab<br>
+            This page was built using the
+            <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+              target="_blank">Academic Project Page Template</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
