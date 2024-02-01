@@ -24,7 +24,7 @@ and [OPV2V](https://drive.google.com/drive/folders/1dkDeHlwOVbmgXcDazZvO6TFEZ6V_
 
 Once the data is downloaded, it's necessary organize the data in the following structure:
 
-```plain
+```
 ├── $REPO_ROOT
 │   ├── data
 │   │   ├── v2v4real
@@ -55,7 +55,7 @@ contact [us](mailto:yunsheng@purdue.edu).
 
 |     Model     |    Backbone     |                                              Checkpoint                                               |                                                Config                                                 | AP@50 | AP@70 |                                                  Log                                                  |
 |:-------------:|:---------------:|:-----------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------:|:-----:|:-----:|:-----------------------------------------------------------------------------------------------------:|
-| MACP-V2V4Real | BEVFusion-LiDAR | [Google Drive](https://drive.google.com/file/d/1SVaMekq_hpnZ_dUb0dvD7tVYXNbTiSfj/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1K2IGPhxr2JWH20MbNlbi3hNiOdHk_LGw/view?usp=drive_link) | 67.6  | 47.9  | [Google Drive](https://drive.google.com/file/d/1SVaMekq_hpnZ_dUb0dvD7tVYXNbTiSfj/view?usp=drive_link) |
+| MACP-V2V4Real | BEVFusion-LiDAR | [Google Drive](https://drive.google.com/file/d/1SVaMekq_hpnZ_dUb0dvD7tVYXNbTiSfj/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1K2IGPhxr2JWH20MbNlbi3hNiOdHk_LGw/view?usp=drive_link) | 67.6  | 47.9  | [Google Drive](https://drive.google.com/file/d/1SVaMekq_hpnZ_dUb0dvD7tVYXNbTiSfj/view?usp=drive_link) |                                                                                                       
 |  MACP-OPV2V   | BEVFusion-LiDAR | [Google Drive](https://drive.google.com/file/d/1fWULVO-3vGQlQ_Hmqq9dcZ5SUSwYicD1/view?usp=drive_link) | [Google Drive](https://drive.google.com/file/d/1_dtbrYahK1zf_-fp4IYocIuMVbx01fNc/view?usp=drive_link) | 93.7  | 90.3  | [Google Drive](https://drive.google.com/file/d/1fzHDJdsNzmsZQ59zt0_FRzoUhC0i1Ufu/view?usp=drive_link) |
 
 ## Training
